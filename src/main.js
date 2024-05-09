@@ -3,7 +3,7 @@ import { k } from "./kaboomCtx.js";
 import { displayDialogue, setCamScale } from "./utils.js";
 
 
-k.loadSprite("spritesheet", "public/spritesheet.png", {
+k.loadSprite("spritesheet", "/public/spritesheet.png", {
     sliceX: 39,
     sliceY: 31,
     anims: {
@@ -16,7 +16,7 @@ k.loadSprite("spritesheet", "public/spritesheet.png", {
     },
   });
 
-k.loadSprite("map", "public/map.png");
+k.loadSprite("map", "/public/map.png");
 
 k.setBackground(k.Color.fromHex("#87ceeb"));
 
