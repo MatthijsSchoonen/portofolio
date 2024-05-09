@@ -1,4 +1,4 @@
-import kaboom from "/portofolio/node_modules/kaboom/dist/kaboom";
+import kaboom from "kaboom";
 
 export const k = kaboom({
     global: false,
