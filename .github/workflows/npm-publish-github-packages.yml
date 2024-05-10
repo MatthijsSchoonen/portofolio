@@ -12,12 +12,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated version to use Node.js 20
+        uses: actions/checkout@v4  # Updated version to use Node.js 20
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'  # Ensure compatibility with Node.js 20
+          node-version: '20'  # Ensure compatibility with Node.js 20
 
       - name: Install dependencies
         run: npm install
@@ -32,18 +32,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated version to use Node.js 20
+        uses: actions/checkout@v4 # Updated version to use Node.js 20
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'  # Ensure compatibility with Node.js 20
+          node-version: '20'  # Ensure compatibility with Node.js 20
 
       - name: Install dependencies
         run: npm install
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3  # Updated version to use Node.js 20
+        uses: peaceiris/actions-gh-pages@v4  # Updated version to use Node.js 20
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
