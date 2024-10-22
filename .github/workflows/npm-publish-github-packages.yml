@@ -1,36 +1,40 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Node.js Package
+name: Deploy Kaboom.js Project to GitHub Pages
 
 on:
+  push:
+    branches:
+      - main  # Trigger on push to main branch
   release:
-    types: [created]
+    types: [published]
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm test
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Setup Node.js environment (if you use any node modules for building)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          node-version: '20'
+
+      # Install dependencies (if you use a package.json)
+      - name: Install dependencies
+        run: npm ci
+
+      # Build the project if necessary (replace with your build command if needed)
+      # If Kaboom.js project is static and doesn't require a build step, you can skip this step
+      - name: Build project
+        run: npm run build # Make sure you have a build script in your package.json
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Change this to your output directory
+
