@@ -3,7 +3,7 @@ import { k } from "./kaboomCtx.js";
 import { displayDialogue, setCamScale } from "./utils.js";
 
 
-k.loadSprite("spritesheet", "https://matthijsschoonen.github.io/portofolio/public/spritesheet.png", {
+k.loadSprite("spritesheet", "/portofolio/public/spritesheet.png", {
     sliceX: 39,
     sliceY: 31,
     anims: {
@@ -16,12 +16,12 @@ k.loadSprite("spritesheet", "https://matthijsschoonen.github.io/portofolio/publi
     },
   });
 
-k.loadSprite("map", "https://matthijsschoonen.github.io/portofolio/public/map.png");
+k.loadSprite("map", "/portofolio/public/map.png");
 
 k.setBackground(k.Color.fromHex("#87ceeb"));
 
 k.scene("main", async () => {
-    const mapData = await  (await fetch("https://matthijsschoonen.github.io/portofolio/public/map.json")).json();
+    const mapData = await  (await fetch("/portofolio/public/map.json")).json();
     const layers = mapData.layers;
 
     const map = k.add([
