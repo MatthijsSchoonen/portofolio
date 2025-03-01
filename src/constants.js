@@ -2,8 +2,8 @@ export const scaleFactor = 4;
 
 
 export const dialogueData = {
-    pc: `Dit is mijn Computer hier programeer en game ik. ik programeer vaak games in Unity met c#. ik heb ook ervaring in python,php,html/css,javascript,typescript,sql. hier een link naar mijn github <a href="https://github.com/MatthijsSchoonen" target="_blank">Github</a>!`,
-    bed: `Hier slaap ik. Geweldige ideeen komen als ik op mijn bed lig`,
-    cv: `Dit is mijn bureau en daarop staat mijn cv. <a href="https://github.com/MATTHlJS/cv/blob/main/cv.pdf">Bekijken?</a>
-    Neem contact met me op via schoonenmatthijs@gmail.com als u mij een baan wilt aanbieden!`,
-  };
+  pc: `This is my computer where I program and game. I often program games in Unity with C#. I also have experience in Python, PHP, HTML/CSS, JavaScript, TypeScript, SQL. Here is a link to my GitHub <a href="https://github.com/MatthijsSchoonen" target="_blank">GitHub</a>!`,
+  bed: `This is where I sleep. Great ideas come to me when I lie on my bed.`,
+  cv: `This is my desk and on it is my resume. <a href="https://github.com/MATTHlJS/cv/blob/main/cv.pdf">View?</a>
+  Contact me at schoonenmatthijs@gmail.com if you want to offer me a job!`,
+};
